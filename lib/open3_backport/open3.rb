@@ -40,9 +40,6 @@ module Open3
         self[:value] ||= begin
           Process.waitpid(pid) rescue nil
           $?
-        ensure
-          self.run
-          self.join
         end
       end
 
